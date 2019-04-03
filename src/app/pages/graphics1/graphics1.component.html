@@ -1,3 +1,52 @@
-<p>
-  graphics1 works!
-</p>
+<div class="row">
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body">
+                <div>
+                    <div>
+                        <h5 class="card-title">{{ graphics.graphic1.caption }}</h5>
+                        <app-doughnut-graphic [chartLabels]="graphics.graphic1.labels" [chartData]="graphics.graphic1.data" [chartType]="graphics.graphic1.type"></app-doughnut-graphic>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body">
+                <div>
+                    <div>
+                        <h5 class="card-title">{{ graphics.graphic2.caption }}</h5>
+                        <app-doughnut-graphic [chartLabels]="graphics.graphic2.labels" [chartData]="graphics.graphic2.data" [chartType]="graphics.graphic2.type"></app-doughnut-graphic>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body">
+                <div>
+                    <div>
+                        <h5 class="card-title">{{ graphics.graphic3.caption }}</h5>
+                        <app-doughnut-graphic [chartLabels]="graphics.graphic3.labels" [chartData]="graphics.graphic3.data" [chartType]="graphics.graphic3.type"></app-doughnut-graphic>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body">
+                <div>
+                    <div>
+                        <h5 class="card-title">{{ graphics.graphic4.caption }}</h5>
+                        <app-doughnut-graphic [chartLabels]="graphics.graphic4.labels" [chartData]="graphics.graphic4.data" [chartType]="graphics.graphic4.type"></app-doughnut-graphic>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
