@@ -14,6 +14,7 @@ import { Graphics1Component } from './graphics1/graphics1.component';
 
 import { IncreaserComponent } from '../components/increaser/increaser.component';
 import { DoughnutGraphicComponent } from '../components/doughnut-graphic/doughnut-graphic.component';
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
 
 
 
@@ -25,7 +26,8 @@ import { DoughnutGraphicComponent } from '../components/doughnut-graphic/doughnu
     ProgressComponent,
     Graphics1Component,
     IncreaserComponent,
-    DoughnutGraphicComponent
+    DoughnutGraphicComponent,
+    AccountSettingsComponent
   ],
   imports: [
     SharedModule,
