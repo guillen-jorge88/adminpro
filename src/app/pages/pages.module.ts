@@ -15,6 +15,8 @@ import { Graphics1Component } from './graphics1/graphics1.component';
 import { IncreaserComponent } from '../components/increaser/increaser.component';
 import { DoughnutGraphicComponent } from '../components/doughnut-graphic/doughnut-graphic.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
+import { PromisesComponent } from './promises/promises.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 
 
@@ -27,7 +29,9 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
     Graphics1Component,
     IncreaserComponent,
     DoughnutGraphicComponent,
-    AccountSettingsComponent
+    AccountSettingsComponent,
+    PromisesComponent,
+    RxjsComponent
   ],
   imports: [
     SharedModule,
