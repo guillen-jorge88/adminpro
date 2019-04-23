@@ -6,6 +6,7 @@ import { map } from 'rxjs/operators';
 
 import swal from 'sweetalert';
 import { Router } from '@angular/router';
+import { UploadFileService } from '../upload-file/upload-file.service';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,8 @@ export class UserService {
 
   constructor(
     public http: HttpClient,
-    public router: Router) {
+    public router: Router,
+    public uploadFile: UploadFileService) {
       this.loadStorage();
   }
 
@@ -87,5 +89,40 @@ export class UserService {
           swal('created user', resp.user.email, 'success');
           return resp.user;
         }));
+  }
+
+  updateUser(user: User) {
+    let url = `${URL_SERVICE}/user/${user._id}?token=${this.token}`;
+    return this.http.put(url, user)
+      .pipe(
+        map((resp: any) => {
+          let name = `${resp.user.firstname} ${resp.user.lastname}`;
+          this.saveInStorage({
+            id: resp.user._id,
+            token: this.token,
+            user: resp.user
+          });
+          swal('updated user', name, 'success');
+          return resp;
+        })
+      );
+  }
+
+  chanceImage(file: File, id: string) {
+    this.uploadFile.uploadFile(file, 'users', id)
+        .then((resp: any) => {
+          console.log(resp.userSaved);
+          let name = `${resp.userSaved.firstname} ${resp.userSaved.lastname}`;
+          this.user.avatar_img = resp.userSaved.avatar_img;
+          this.saveInStorage({
+            id: resp.userSaved._id,
+            token: this.token,
+            user: resp.userSaved
+          });
+          swal('updated Avatar Image', name, 'success');
+        })
+        .catch((err: any) =>{
+          console.log(err);
+        });
   }
 }

@@ -8,6 +8,7 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
 import { PromisesComponent } from './promises/promises.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { LoginGuard } from '../services/guards/login.guard';
+import { ProfileComponent } from './profile/profile.component';
 
 
 
@@ -23,6 +24,7 @@ const pagesRoutes: Routes = [
           { path: 'promises', component: PromisesComponent, data: {title: 'Promises'} },
           { path: 'rxjs', component: RxjsComponent, data: {title: 'RxJs'} },
           { path: 'theme-setting', component: AccountSettingsComponent, data: {title: 'Theme Setting'} },
+          { path: 'profile', component: ProfileComponent, data: {title: 'My Profile'} },
           { path: '', redirectTo: '/login', pathMatch: 'full'}
         ]
     }

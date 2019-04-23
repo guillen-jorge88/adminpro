@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SidebarService, UserService } from '../../services/service.index';
+import { User } from '../../models/user';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,13 +8,14 @@ import { SidebarService, UserService } from '../../services/service.index';
   styles: []
 })
 export class SidebarComponent implements OnInit {
-
+  user: User;
   constructor(
     public sidebarService: SidebarService,
     public userService: UserService) {}
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+      this.user = this.userService.user;
+    }
 
   logout() {
     this.userService.logout();

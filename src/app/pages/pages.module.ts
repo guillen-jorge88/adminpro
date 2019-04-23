@@ -6,6 +6,9 @@ import { FormsModule } from '@angular/forms';
 import { ChartsModule } from 'ng2-charts';
 import { from } from 'rxjs';
 
+// pipes
+import { PipeModule } from '../pipes/pipe.module';
+
 import { PagesComponent } from './pages.component';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -17,6 +20,7 @@ import { DoughnutGraphicComponent } from '../components/doughnut-graphic/doughnu
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { PromisesComponent } from './promises/promises.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 
@@ -31,13 +35,16 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     DoughnutGraphicComponent,
     AccountSettingsComponent,
     PromisesComponent,
-    RxjsComponent
+    RxjsComponent,
+    ProfileComponent
   ],
   imports: [
+    CommonModule,
     SharedModule,
     PAGES_ROUTES,
     FormsModule,
-    ChartsModule
+    ChartsModule,
+    PipeModule
   ],
   exports: [
     DashboardComponent,

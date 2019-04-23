@@ -38,9 +38,9 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  attachSigin(element) {
+  attachSigin(element: any) {
     this.auth2.attachClickHandler(element, {}, googleUser => {
-      //let profile = googleUser.getBasicProfile();
+      // let profile = googleUser.getBasicProfile();
       let token = googleUser.getAuthResponse().id_token;
       this.userService.loginGoogle(token)
         .subscribe( () => window.location.href = '/dashboard');
@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
   }
 
   login(form: NgForm) {
-    if(form.invalid){
+    if (form.invalid) {
       return;
     }
 
@@ -56,10 +56,6 @@ export class LoginComponent implements OnInit {
 
     this.userService.login(user, form.value.rememberme)
         .subscribe(resp => this.router.navigate(['/dashboard']));
-
-    console.log(form.valid);
-    console.log(form.value);
-    // this.router.navigate(['/dashboard']);
   }
 
 }
